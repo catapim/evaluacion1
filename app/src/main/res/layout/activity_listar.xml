@@ -12,37 +12,4 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/titleListar" android:textAlignment="center"
             android:textSize="24sp"/>
-    <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:id="@+id/inRut3" android:inputType="number" android:layout_margin="4dp" android:hint="RUT"/>
-    <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/inNombre3" android:layout_margin="4dp" android:hint="Nombre"/>
-    <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/inApellido3" android:layout_margin="4dp" android:hint="Apellido"/>
-    <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/inComuna3" android:layout_margin="4dp" android:hint="Comuna"/>
-    <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/inDireccion3" android:layout_margin="4dp" android:hint="Direccion"/>
-    <Button
-            android:text="Guardar y continuar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/btnRegistrar3"/>
 </LinearLayout>

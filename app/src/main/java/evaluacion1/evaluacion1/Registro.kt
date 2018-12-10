@@ -52,10 +52,21 @@ class Registro : AppCompatActivity() {
         var getDireccion = inDireccion.text.toString()
 
         var buttonGuardar = btnGuardar.setOnClickListener{
-            var rutIntento = Intent(this,Detalles::class.java)
+            var rutIntento = Intent(this,Listar::class.java)
             rutIntento.putExtra("msgRut",getRut)
-            
 
         }
+
+        var inNom  = Intent(this,Listar::class.java)
+        inNom.putExtra("msgNom",getRut)
+        var inApe = Intent(this,Listar::class.java)
+        inApe.putExtra("msgApe",getApellido)
+
+        var inComu= Intent(this,Listar::class.java)
+        inComu.putExtra("msgComu",getComuna)
+
+        var inDire= Intent(this,Listar::class.java)
+        inDire.putExtra("msgDire",getDireccion)
+
     }
 }
