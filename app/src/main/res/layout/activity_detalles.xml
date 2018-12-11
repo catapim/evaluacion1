@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/titleCompra"
                 android:textAlignment="center"
-                android:textSize="24sp" android:layout_margin="6dp"/>
+                android:textSize="18sp" android:layout_margin="6dp"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/titleFechaServicio"
                 android:textAlignment="center"
-                android:textSize="24sp" android:layout_margin="6dp"/>
+                android:textSize="18sp" android:layout_margin="6dp"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -40,15 +40,14 @@
                 android:ems="10"
                 android:id="@+id/selectST"/>
         <TextView
-                android:text="Detalles de servicio"
+                android:text="Descripción falla"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/titleDescripcion" android:textAlignment="center"
-                android:textSize="24sp" android:layout_margin="6dp"/>
+                android:textSize="18sp" android:layout_margin="6dp"/>
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Name"
                 android:ems="10"
                 android:id="@+id/txtDescripcion"/>
         <LinearLayout

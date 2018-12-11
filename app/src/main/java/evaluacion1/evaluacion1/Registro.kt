@@ -1,11 +1,16 @@
 package evaluacion1.evaluacion1
 
+import android.arch.lifecycle.ViewModelStore
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_registro.*
 
@@ -57,6 +62,8 @@ class Registro : AppCompatActivity() {
 
         }
 
+
+        //haciendo los intents
         var inNom  = Intent(this,Listar::class.java)
         inNom.putExtra("msgNom",getRut)
         var inApe = Intent(this,Listar::class.java)
@@ -67,6 +74,9 @@ class Registro : AppCompatActivity() {
 
         var inDire= Intent(this,Listar::class.java)
         inDire.putExtra("msgDire",getDireccion)
+
+
+
 
     }
 }
