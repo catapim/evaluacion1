@@ -1,26 +1,27 @@
 package evaluacion1.evaluacion1
 
 import android.content.Context
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 
-class ClienteAdapter(var miContexto: Context,
-                     var listaClientes:ArrayList<Cliente>,
-                     var listaServicios:ArrayList<ServicioActivity>) {
+class ClienteAdapter (var item: ArrayList<Cliente>) : RecyclerView.Adapter<ClienteAdapter.ViewHolder>(){
+    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
+    override fun getItemCount(): Int {
+        return item.size
+    }
+
+    override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    class ViewHolder(row: View): RecyclerView.ViewHolder(row){
+
+    }
 }
-
-
-                  /*      override fun getView(position: Int, converView: View?, parent: ViewGroup?): View {
-                            val item: View = LayoutInflater.from(miContexto).inflate(null)
-                            val nombre: TextView = item.findViewById(R.id.inNombre)
-                            val apellido: TextView = item.findViewById(R.id.inApellido)
-                            val persona:Cliente=miLista[position]
-                            nombre.text =persona.nombre
-                            apellido.text=persona.apellido
-                            return item
-                        }*/
-
