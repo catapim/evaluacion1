@@ -32,17 +32,7 @@ class Listar : AppCompatActivity() {
         //ahora se le dice a LISTVIEW del xml que adaptador usar, mediante su ID
         lvEj.adapter = adaptador*/
 
-        class CustomAdapter (var miContexto: Context, var miRecurso:Int, var miLista:ArrayList<Cliente>) : ArrayAdapter<Cliente>(miContexto,miRecurso,miLista) {
-            override fun getView(position: Int, converView: View?, parent: ViewGroup?): View {
-                val item:View = LayoutInflater.from(miContexto).inflate(miRecurso,null)
-                val nombre:TextView = item.findViewById(R.id.inNombre)
-                val apellido:TextView = item.findViewById(R.id.inApellido)
-                val persona:Cliente=miLista[position]
-                nombre.text =persona.nombre
-                apellido.text=persona.apellido
-                return item
-            }
-        }
+
 
         val listado : ListView = findViewById(R.id.lvEj)
 

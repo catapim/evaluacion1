@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".Detalles">
         </activity>
+        <activity android:name=".ServicioActivity">
+        </activity>
     </application>
 
 </manifest>
