@@ -28,7 +28,11 @@ class Registro : AppCompatActivity() {
             System.out.println(rutTextBox.text);
             var nombre:String = findViewById<EditText>(R.id.inNombre).text.toString();
             var apellido:String = findViewById<EditText>(R.id.inApellido).text.toString()
-            var cliente:Cliente = Cliente(nombre,apellido)
+            var rut:String = findViewById<EditText>(R.id.inRut).text.toString()
+            var comuna:String = findViewById<EditText>(R.id.inComuna).text.toString()
+            var direccion:String = findViewById<EditText>(R.id.inDireccion).text.toString()
+
+            var cliente:Cliente = Cliente(nombre,apellido,rut,comuna,direccion)
             lista_clientes.add(cliente);
             Toast.makeText(this, "hola "+cliente.nombre+" "+cliente.apellido, Toast.LENGTH_SHORT).show()
 
