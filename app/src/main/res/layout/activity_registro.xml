@@ -49,5 +49,9 @@
                 android:text="Registrar cliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/btnGuardar"/>
+        <Button
+                android:text="Registrar otro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/btnOtro"/>
     </LinearLayout>
 </LinearLayout>
