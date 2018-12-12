@@ -33,12 +33,10 @@ class Listar : AppCompatActivity() {
         lvEj.adapter = adaptador*/
 
 
+      //  var adaptador:ArrayAdapter<String> = ArrayAdapter(this,android.R.layout.simple_list_item_1,listado)
+      //  val listado : ListView = findViewById(R.id.lvEj)
 
-        val listado : ListView = findViewById(R.id.lvEj)
 
-        val lista:ArrayList<String> = ArrayList()
-        lista.add(inNombre.toString())
-        lista.add(inApellido.toString())
 //se crea el adaptador
     //    var adaptador:CustomAdapter = CustomAdapter (this,R.layout.simple_list_item_1,lista)
 

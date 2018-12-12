@@ -1,17 +1,15 @@
 package evaluacion1.evaluacion1
 
-import android.arch.lifecycle.ViewModelStore
-import android.content.Context
-import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
+import evaluacion1.evaluacion1.R.id.btnGuardar
+import evaluacion1.evaluacion1.R.id.lvEj
 import kotlinx.android.synthetic.main.activity_registro.*
 
 class Registro : AppCompatActivity() {
@@ -20,28 +18,36 @@ class Registro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
 
-        //guardando inputs de Registro.kt
-        var getRut = inRut.text.toString()
-        var getNombre = inNombre.text.toString()
-        var getApellido = inApellido.text.toString()
-        var getComuna = inComuna.text.toString()
-        var getDireccion = inDireccion.text.toString()
 
-        var buttonGuardar = btnGuardar.setOnClickListener{
-            var rutIntento = Intent(this,Listar::class.java)
-            rutIntento.putExtra("msgRut",getRut)
+        val lista: ArrayList<Cliente> = ArrayList()
+        lista.add(Cliente(inNombre.toString(),inApellido.toString(),inRut.toString(),inComuna.toString(),inDireccion.toString()))
+        val adaptador:CustomAdapter = CustomAdapter(this, R.layout.activity_listar, lista)
+      //  lvEj.adapter = adaptador
+
+    }
+
+
+    class CustomAdapter(
+        var contexto: Registro,
+        val recurso: Int,
+        val lista: ArrayList<Cliente>
+    ) : ArrayAdapter<Cliente>(contexto, recurso, lista) {
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+            var vista: View = LayoutInflater.from(contexto).inflate(recurso, null)
+
+            //guardando inputs de Registro.kt
+            var getRut = vista.findViewById<TextView>(R.id.inRut).toString()
+            var getNombre = vista.findViewById<TextView>(R.id.inNombre).toString()
+            var getApellido = vista.findViewById<TextView>(R.id.inApellido).toString()
+            var getComuna = vista.findViewById<TextView>(R.id.inComuna).toString()
+            var getDireccion = vista.findViewById<TextView>(R.id.inDireccion).toString()
+            val cliente: Cliente = lista[position]
+            var buttonGuardar = vista.findViewById<Button>(btnGuardar)
+            buttonGuardar.setOnClickListener {
+                //     lista.add(Cliente(getNombre, getApellido, getRut, getComuna, getDireccion).toString())
+            }
+            return vista
         }
-
-        //haciendo los intents
-        var inNom  = Intent(this,Listar::class.java)
-        inNom.putExtra("msgNom",getRut)
-        var inApe = Intent(this,Listar::class.java)
-        inApe.putExtra("msgApe",getApellido)
-
-        var inComu= Intent(this,Listar::class.java)
-        inComu.putExtra("msgComu",getComuna)
-
-        var inDire= Intent(this,Listar::class.java)
-        inDire.putExtra("msgDire",getDireccion)
     }
 }
