@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import evaluacion1.evaluacion1.R.id.parent
-import evaluacion1.evaluacion1.R.id.rvEj
+import evaluacion1.evaluacion1.R.id.lvEj
 
 class ClienteAdapter(){
 }
