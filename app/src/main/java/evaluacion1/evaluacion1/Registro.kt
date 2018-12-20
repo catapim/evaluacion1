@@ -25,8 +25,7 @@ class Registro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
 
-        val view  = findViewById(R.layout.layout_lista_clientes) as View
-        val laLista = view.findViewById(R.id.lvEj) as ListView
+
         //   var vista: View = LayoutInflater.from(contexto).inflate(recurso, null)
         var lista_clientes = arrayListOf<Cliente>()
         var buttonGuardar = findViewById<Button>(R.id.btnGuardar)
@@ -49,7 +48,7 @@ class Registro : AppCompatActivity() {
 
             val adaptador = CustomAdapter(this@Registro,
                 R.layout.layout_lista_clientes,lista_clientes)
-            laLista.adapter = adaptador
+            lvEj.adapter = adaptador
         }
         //botón que limpia los campos edittext para registrar nuevo cliente
         buttonOtro.setOnClickListener {
