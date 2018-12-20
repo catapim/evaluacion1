@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".FragRegistro">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/layRegistro">
+        <TextView
+                android:text="REGISTRANDO GENTE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textStyle="bold|italic"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/inRut" android:inputType="number" android:layout_margin="4dp" android:hint="RUT"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/inNombre" android:layout_margin="4dp" android:hint="Nombre"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/inApellido" android:layout_margin="4dp" android:hint="Apellido"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/inComuna" android:layout_margin="4dp" android:hint="Comuna"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/inDireccion" android:layout_margin="4dp" android:hint="Direccion"/>
+        <Button
+                android:text="Registrar cliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/btnGuardar"/>
+        <Button
+                android:text="Registrar otro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/btnOtro"/>
+        <Button
+                android:text="Ver clientes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/btnListar"/>
+    </LinearLayout>
+</FrameLayout>

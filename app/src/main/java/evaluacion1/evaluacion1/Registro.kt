@@ -2,20 +2,16 @@ package evaluacion1.evaluacion1
 
 import android.content.Context
 import android.os.Bundle
-import android.support.constraint.R.id.parent
-import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.text.Layout
 import android.view.LayoutInflater
-import android.view.View
+
 import android.view.ViewGroup
 import android.widget.*
+import evaluacion1.evaluacion1.R.id.lvEj
 import kotlinx.android.synthetic.main.activity_listar.*
 import kotlinx.android.synthetic.main.activity_registro.*
-import kotlinx.android.synthetic.main.activity_registro.view.*
-import kotlinx.android.synthetic.main.layout_lista_clientes.*
+import kotlinx.android.synthetic.main.fragment_frag_listar.*
 
 class Registro : AppCompatActivity() {
 
@@ -25,16 +21,12 @@ class Registro : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
 
-
-        //   var vista: View = LayoutInflater.from(contexto).inflate(recurso, null)
+/*        //   var vista: View = LayoutInflater.from(contexto).inflate(recurso, null)
         var lista_clientes = arrayListOf<Cliente>()
-        var buttonGuardar = findViewById<Button>(R.id.btnGuardar)
-        var buttonOtro = findViewById<Button>(R.id.btnOtro)
+
 
         //boton que guarda datos cliente en arraylist
-        buttonGuardar.setOnClickListener {
-            //var rutTextBox:EditText = findViewById<EditText>(R.id.inRut)
-            //System.out.println(rutTextBox.text);
+        btnGuardar.setOnClickListener {
             var nombre: String = findViewById<EditText>(R.id.inNombre).text.toString()
             var apellido: String = findViewById<EditText>(R.id.inApellido).text.toString()
             var rut: String = findViewById<EditText>(R.id.inRut).text.toString()
@@ -43,21 +35,30 @@ class Registro : AppCompatActivity() {
 
             var cliente = Cliente(nombre, apellido, rut, comuna, direccion)
            lista_clientes.add(cliente)
-            //Toast.makeText(this, "hola "+cliente.nombre+" "+cliente.apellido, Toast.LENGTH_SHORT).show()
+
             Toast.makeText(this, "Cliente registrado exitosamente", Toast.LENGTH_SHORT).show()
 
-            val adaptador = CustomAdapter(this@Registro,
-                R.layout.layout_lista_clientes,lista_clientes)
+            val adaptador = CustomAdapter(this@Registro,R.layout.layout_lista_clientes,lista_clientes)
             lvEj.adapter = adaptador
         }
+
         //botón que limpia los campos edittext para registrar nuevo cliente
-        buttonOtro.setOnClickListener {
+        btnOtro.setOnClickListener {
             inRut.text.clear()
             inNombre.text.clear()
             inApellido.text.clear()
             inComuna.text.clear()
             inDireccion.text.clear()
             Toast.makeText(this, "Ya puedes registrar otro cliente", Toast.LENGTH_SHORT).show()
+        }
+
+        btnListar.setOnClickListener {
+            val fm = supportFragmentManager
+            val ft = fm.beginTransaction()
+            val frag = FragListar()
+            frag.miContextoF = this
+            ft.replace(R.id.layRegistro,frag)
+            ft.commit()
         }
     }
 
@@ -73,7 +74,7 @@ class Registro : AppCompatActivity() {
             clienteNombre.text = miLista[position].nombre.toString()
             clienteApellido.text = miLista[position].apellido.toString()
             return v
-        }
+        }*/
     }
 }
 
