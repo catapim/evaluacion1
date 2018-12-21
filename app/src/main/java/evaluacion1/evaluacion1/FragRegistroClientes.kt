@@ -1,5 +1,6 @@
 package evaluacion1.evaluacion1
 
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -20,7 +21,6 @@ import kotlinx.android.synthetic.main.layout_lista_clientes.view.*
 class FragRegistroClientes (): Fragment() {
 
     var miContexto: Context? = null
-    var lista_clientes = arrayListOf<Cliente>()
 
 
     override fun onCreateView(
@@ -42,9 +42,17 @@ class FragRegistroClientes (): Fragment() {
             var direccion: String = v.findViewById<EditText>(R.id.inDireccion).text.toString()
 
             var cliente = Cliente(nombre, apellido, rut, comuna, direccion)
-            lista_clientes.add(cliente)
 
-            val adaptador = CustomAdapter(miContexto!!, R.layout.fragment_frag_listar_clientes, lista_clientes)
+            val model = ViewModelProviders.of(this).get(UserModel::class.java)
+
+            model.addUser(cliente);
+
+
+
+            // lista_clientes.add(cliente)
+
+           //val adaptador = CustomAdapter(miContexto!!, R.layout.layout_lista_clientes, lista_clientes)
+            //lvEj.adapter = adaptador
         }
 
         //boton que guarda datos cliente en arraylist

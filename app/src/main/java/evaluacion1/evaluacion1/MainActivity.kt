@@ -1,5 +1,9 @@
 package evaluacion1.evaluacion1
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModel
+import android.arch.lifecycle.ViewModelProvider
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -15,16 +19,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    var lista_clientes = arrayListOf<Cliente>()
 
-    //hola
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+        val model = ViewModelProviders.of(this).get(UserModel::class.java)
+//        var nombre0 = model.getUsers().get(0).nombre
+  //      System.out.println(nombre0)
 
         val toggle = ActionBarDrawerToggle(
-                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+          this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 

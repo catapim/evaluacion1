@@ -1,5 +1,6 @@
 package evaluacion1.evaluacion1
 
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
@@ -31,10 +32,8 @@ private const val ARG_PARAM2 = "param2"
  */
 class FragListarClientes (): Fragment() {
 
-    var lista_clientes = ArrayList<Cliente>()
 
     var miContexto: Context? = null
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,12 +41,22 @@ class FragListarClientes (): Fragment() {
     ): View? {
 
         var view = inflater.inflate(R.layout.fragment_frag_listar_clientes, container, false)
-        var lvEj2 : ListView = view.findViewById<ListView>(R.id.lvEj)
-
-
-
         return view
+    }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        val model = ViewModelProviders.of(this).get(UserModel::class.java)
+        var clientes : ArrayList<Cliente> =  model.getUsers()
+
+        for (i in clientes) {
+            System.out.println(i)
+        }
 
     }
 }
+
+
+
