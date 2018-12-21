@@ -66,15 +66,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 fragmento.miContexto = this
                 ft.replace(R.id.layFragmentoMutable,fragmento)
                 ft.commit()
+            }
+
+            R.id.nav_list_client -> {
+                //aqui debe cargar fragmento en main activity con el registro de personas clientes
+                val fm = supportFragmentManager
+                val ft = fm.beginTransaction()
+                val fragmento = FragListarClientes()
+                fragmento.miContexto = this
+                ft.replace(R.id.layFragmentoMutable,fragmento)
+                ft.commit()
 
             }
-            R.id.nav_list -> {
+
+            R.id.nav_reg_serv -> {
                 //aqui debe cargar fragmento en main activity con el registro de
                 // servicios. los servicios se registrarán por persona
 
                 val fm = supportFragmentManager
                 val ft = fm.beginTransaction()
-                val fragmento =FragRegistroClientes()
+                val fragmento =FragRegistroServicios()
                 fragmento.miContexto = this
                 ft.replace(R.id.layFragmentoMutable,fragmento)
                 ft.commit()

@@ -24,6 +24,9 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class FragRegistroServicios : Fragment() {
+
+    var miContexto : Context? = null
+
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -37,12 +40,27 @@ class FragRegistroServicios : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_frag_registro_servicios, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View?
+    {
+
+        var v = inflater.inflate(R.layout.fragment_frag_registro_servicios, container, false)
+        return v
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -50,14 +68,14 @@ class FragRegistroServicios : Fragment() {
         listener?.onFragmentInteraction(uri)
     }
 
-    override fun onAttach(context: Context) {
+ /*   override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is OnFragmentInteractionListener) {
             listener = context
         } else {
             throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
-    }
+    }*/
 
     override fun onDetach() {
         super.onDetach()

@@ -10,8 +10,12 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="Registrar clientes" />
         <item
-                android:id="@+id/nav_list"
+                android:id="@+id/nav_list_client"
                 android:icon="@drawable/ic_menu_gallery"
-                android:title="Ver clientes" />
+                android:title="Listar a todos los clientes" />
+        <item
+                android:id="@+id/nav_reg_serv"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="Asociar servicio a un cliente" />
     </group>
 </menu>

@@ -1,108 +1,78 @@
 package evaluacion1.evaluacion1
 
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.RecyclerView
+import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.*
+import evaluacion1.evaluacion1.R.layout.fragment_frag_listar_clientes
+import evaluacion1.evaluacion1.R.id.lvEj
+import evaluacion1.evaluacion1.R.layout.fragment_frag_registro_clientes
+import kotlinx.android.synthetic.*
+import kotlinx.android.synthetic.main.fragment_frag_listar_clientes.*
 
+class FragRegistroClientes (): Fragment() {
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+    var miContexto: Context? = null
+    var lista_clientes = arrayListOf<Cliente>()
 
-/**
- * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [FragRegistroClientes.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [FragRegistroClientes.newInstance] factory method to
- * create an instance of this fragment.
- *
- */
-class FragRegistroClientes : Fragment() {
-
-    var miContexto:Context? = null
-
-
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    private var listener: OnFragmentInteractionListener? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        var v =  inflater.inflate(R.layout.fragment_frag_registro_clientes, container, false)
-        return v
+        var v = inflater.inflate(R.layout.fragment_frag_registro_clientes, container, false)
+        var v2 = inflater.inflate(R.layout.fragment_frag_listar_clientes, container, false)
+        var lvEj2 = v2.findViewById(R.id.lvEj) as ListView
 
-    }
+        var btnSave = v.findViewById<Button>(R.id.btnGuardar)
+        var btnClear = v.findViewById<Button>(R.id.btnOtro)
 
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
-    }
+        btnSave.setOnClickListener {
+            var nombre = v.findViewById<EditText>(R.id.inNombre).text.toString()
+            var apellido: String = v.findViewById<EditText>(R.id.inApellido).text.toString()
+            var rut: String = v.findViewById<EditText>(R.id.inRut).text.toString()
+            var comuna: String = v.findViewById<EditText>(R.id.inComuna).text.toString()
+            var direccion: String = v.findViewById<EditText>(R.id.inDireccion).text.toString()
 
-/*    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
-            listener = context
-        } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+            var cliente = Cliente(nombre, apellido, rut, comuna, direccion)
+            lista_clientes.add(cliente)
+
+            val adaptador = CustomAdapter(miContexto!!, R.layout.fragment_frag_listar_clientes, lista_clientes)
+            lvEj2.adapter = adaptador
         }
-    }*/
 
-    override fun onDetach() {
-        super.onDetach()
-        listener = null
+        //boton que guarda datos cliente en arraylist
+        //botón que limpia los campos edittext para registrar nuevo cliente
+        btnClear.setOnClickListener {
+            v.findViewById<EditText>(R.id.inRut).text.clear()
+            v.findViewById<EditText>(R.id.inNombre).text.clear()
+            v.findViewById<EditText>(R.id.inApellido).text.clear()
+            v.findViewById<EditText>(R.id.inComuna).text.clear()
+            v.findViewById<EditText>(R.id.inDireccion).text.clear()
+//           Toast.makeText(this, "Ya puedes registrar otro cliente", Toast.LENGTH_SHORT).show()
+        }
+        return v
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson [Communicating with Other Fragments]
-     * (http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
-    interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragRegistroClientes.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FragRegistroClientes().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    class CustomAdapter(
+        var miContexto: Context,
+        var miRecurso: Int,
+        var miLista: ArrayList<Cliente>
+    ) : ArrayAdapter<Cliente>(miContexto, miRecurso, miLista) {
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+            var v: View = LayoutInflater.from(miContexto).inflate(miRecurso, null)
+            var clienteNombre = v.findViewById<TextView>(R.id.lblNombre)
+            var clienteApellido = v.findViewById<TextView>(R.id.lblApellido)
+            clienteNombre.text = miLista[position].nombre.toString()
+            clienteApellido.text = miLista[position].apellido.toString()
+            return v
+        }
     }
 }
+
