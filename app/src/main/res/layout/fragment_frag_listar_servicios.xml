@@ -3,16 +3,12 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".FragListar">
+             tools:context=".FragListarServicios">
 
     <!-- TODO: Update blank fragment layout -->
-
-    <LinearLayout
-            android:orientation="vertical"
+    <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:id="@+id/layListView">
-        <ListView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" android:id="@+id/lvEj"/>
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:text="@string/hello_blank_fragment"/>
+
 </FrameLayout>

@@ -59,12 +59,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_reg -> {
-                val intent = Intent(this, Registro::class.java)
-                startActivity(intent)
+                //aqui debe cargar fragmento en main activity con el registro de personas clientes
+                val fm = supportFragmentManager
+                val ft = fm.beginTransaction()
+                val fragmento = FragRegistroClientes()
+                fragmento.miContexto = this
+                ft.replace(R.id.layFragmentoMutable,fragmento)
+                ft.commit()
+
             }
             R.id.nav_list -> {
-                val intent = Intent(this, Listar::class.java)
-                startActivity(intent)
+                //aqui debe cargar fragmento en main activity con el registro de
+                // servicios. los servicios se registrarán por persona
+
+                val fm = supportFragmentManager
+                val ft = fm.beginTransaction()
+                val fragmento =FragRegistroClientes()
+                fragmento.miContexto = this
+                ft.replace(R.id.layFragmentoMutable,fragmento)
+                ft.commit()
             }
         }
 

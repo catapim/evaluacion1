@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".FragRegistroServicios">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ServicioActivity" android:orientation="vertical" android:id="@+id/layServicio"
+            android:layout_margin="0dp">
+
+        <TextView
+                android:text="Asocia un servicio a un cliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/txtServicio" android:textSize="18sp"
+                android:textAlignment="center" android:textStyle="bold|italic" android:textAllCaps="true"
+                android:layout_margin="0dp"/>
+        <TextView
+                android:text="Seleccione un cliente de la lista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/lblEligeCliente" android:textSize="18sp"
+                android:textAlignment="viewStart" android:textAllCaps="false"
+                android:layout_margin="0dp"/>
+        <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/spinnerClientes"/>
+        <TextView
+                android:text="Elige el tipo de aparato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/txtAparatos" android:layout_weight="0"
+                android:textAlignment="viewStart" android:layout_marginTop="15dp" android:textSize="18sp"
+                android:layout_margin="0dp"/>
+        <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/spAparatos" android:layout_margin="0dp"/>
+        <TextView
+                android:text="Seleccione fecha compra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/titleCompra"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" android:layout_margin="0dp"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/selectFechaCompra" android:layout_margin="0dp"/>
+        <TextView
+                android:text="Seleccione fecha ST"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/titleFechaServicio"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" android:layout_margin="0dp"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/selectST" android:layout_margin="0dp"/>
+        <TextView
+                android:text="Descripción falla"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/titleDescripcion"
+                android:textAlignment="viewStart"
+                android:textSize="18sp" android:layout_margin="0dp"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/txtDescripcion" android:layout_margin="0dp"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_margin="0dp">
+            <TextView
+                    android:text="Solucionado el problema? Seleccione según corresponda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/titleSolucion" android:layout_weight="0"
+                    android:textAlignment="viewStart" android:textSize="18sp" android:layout_margin="1dp"
+                    android:layout_marginTop="6dp"/>
+            <RadioGroup
+                    android:layout_width="324dp"
+                    android:layout_height="wrap_content">
+                <RadioButton
+                        android:text="SI"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/radioButton" android:layout_weight="1"/>
+                <RadioButton
+                        android:text="NO"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:id="@+id/radioButton2" android:layout_weight="1"/>
+            </RadioGroup>
+        </LinearLayout>
+        <Button
+                android:text="Asociar servicio a cliente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/btnFinalizar" android:layout_margin="0dp"/>
+    </LinearLayout>
+
+</FrameLayout>
